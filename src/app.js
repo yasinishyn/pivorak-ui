@@ -1,5 +1,15 @@
 import Stepan from '/src/lib/stepan.js'
 
+import { API_URL } from './constants/index.js'
+
+// import {
+//   TotoListHead,
+//   TodoListToggleAll,
+//   TodoList
+// } from './components/todoList/index.js';
+
+import { Footer } from './components/footer/index.js';
+
 class App extends Stepan.Component {
   constructor(props) {
     super(props);
@@ -23,7 +33,11 @@ class App extends Stepan.Component {
   }
 
   render() {
-    return Stepan.createElement('div', {}, ['HERE I AM', 'HERE I AM 2'])
+    return Stepan.createElement('div', {}, [
+      'HERE I AM',
+      'HERE I AM 2',
+      new Footer ({todos: this.state.todos})
+    ])
   }
 }
 
